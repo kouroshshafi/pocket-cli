@@ -6,6 +6,7 @@ import subprocess as sp
 import sys
 import itertools
 from starter_program import OPEN_COMMAND
+from starter_program import PERCOL_COMMAND
 
 
 class PocketItem:
