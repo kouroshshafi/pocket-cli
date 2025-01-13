@@ -21,6 +21,7 @@ Through `pocket-cli`'s prompt, you can:
 * `[f]ilter` the items by keyword
 * `[s]ort` the items based on reading time or time added
 * `[t]ag` the items with the needed time to read
+* `[p]rint` the items using  [percollate command] (https://github.com/danburzo/percollate)
 
 Viewing an item will open the link to your default browser.
 
@@ -75,7 +76,7 @@ Here's a truncated example using my list:
 -------  -------------  ---------------------------------------------------------------------------  ----------------------------------  -------------------  --------------  ------------
   Index  Domain Name    Title                                                                        URL                                 Added                  Time to Read    Word Count
 
-[v]iew <index>  |  [d]elete <index>  |  [d]elete [a]ll  |  [.] domains  |  [vd] <index>  |  [u]pdate  |  by [l]ength  |  [f]ilter <keyword>  |  [s]ort  |  [t]ag  |  [q]uit >
+[v]iew <index>  |  [d]elete <index>  |  [d]elete [a]ll  |  [.] domains  |  [vd] <index>  |  [u]pdate  |  by [l]ength  |  [f]ilter <keyword>  |  [s]ort  |  [t]ag  |  [q]uit | [p]rint >
 ```
 
 # Ideas/Bugs
