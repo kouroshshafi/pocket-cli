@@ -76,7 +76,7 @@ Here's a truncated example using my list:
 -------  -------------  ---------------------------------------------------------------------------  ----------------------------------  -------------------  --------------  ------------
   Index  Domain Name    Title                                                                        URL                                 Added                  Time to Read    Word Count
 
-[v]iew <index>  |  [d]elete <index>  |  [d]elete [a]ll  |  [.] domains  |  [vd] <index>  |  [u]pdate  |  by [l]ength  |  [f]ilter <keyword>  |  [s]ort  |  [t]ag  |  [q]uit | [p]rint >
+[v]iew <index>  |  [d]elete <index>  |  [d]elete [a]ll  |  [.] domains  |  [vd] <index>  |  [u]pdate  |  by [l]ength  |  [f]ilter <keyword>  |  [s]ort  |  [t]ag  |  [q]uit | [p]rint <index> >
 ```
 
 # Ideas/Bugs
