@@ -7,7 +7,7 @@ import sys
 import itertools
 from starter_program import OPEN_COMMAND
 from starter_program import PERCOL_COMMAND
-
+import time
 
 class PocketItem:
     sort_idx: int
@@ -36,7 +36,7 @@ class PocketItem:
         self.domain_name = domain_name
         self.given_title = given_title
         self.given_url = given_url
-        self.time_added = int(time_added)
+        self.time_added = int(time_added) if time_added.isdigit() else int(time.time())
         self.time_to_read = self.get_time_to_read(int(word_count))
         self.word_count = int(word_count)
 
