@@ -7,5 +7,6 @@ elif sys.platform.startswith("windows"):
     OPEN_COMMAND = "start"
 elif sys.platform == "darwin":
     OPEN_COMMAND = "open"
+    PERCOL_COMMAND = "percollate"
 else:
     raise NotImplementedError(f"We do not know how to open URLs in {sys.platform} platform")
