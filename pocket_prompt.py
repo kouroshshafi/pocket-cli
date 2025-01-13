@@ -5,6 +5,7 @@ import shutil
 import subprocess as sp
 from urllib.parse import urlparse
 from starter_program import OPEN_COMMAND
+from starter_program import PERCOL_COMMAND
 from tabulate import tabulate
 from collections import defaultdict
 
@@ -28,6 +29,7 @@ class PocketPrompt:
         "s": "[s]ort",
         "t": "[t]ag",
         "q": "[q]uit",
+        "p": "[p]rint",
     }
 
     def __init__(self, pocket: Pocket):
@@ -216,7 +218,7 @@ class PocketPrompt:
                 continue
             if tokens[0] in ("q", "u", "l", "s", "t") and len(tokens) != 1:
                 continue
-            if tokens[0] in ("v", "d", "vd", "f") and len(tokens) != 2:
+            if tokens[0] in ("v", "d", "vd", "f", "p") and len(tokens) != 2:
                 continue
 
             return tokens
@@ -296,7 +298,16 @@ class PocketPrompt:
                             self.pocket.request_delete(item_id)
                             del self.items[item_id]
                             self.display()
-
+                        case "p":
+                            formatted_date = datetime.fromtimestamp(self.items[item_id].time_added).strftime('%Y-%m-%d')
+                            sp.Popen(
+                                [PERCOL_COMMAND, "pdf", "--css", "a:after { display: none }", f"--output={formatted_date} {self.items[item_id].given_title}.pdf", self.items[item_id].given_url],
+                                stdout=sp.DEVNULL,
+                                stderr=sp.DEVNULL,
+                            )
+                            #self.pocket.request_delete(item_id)
+                            #del self.items[item_id]
+                            self.display()
     def update_tags(self):
         for item_id in self.items.keys():
             self.pocket.request_tags_clear(item_id)
